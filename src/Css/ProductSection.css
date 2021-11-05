@@ -30,6 +30,7 @@
   overflow: hidden;
   border: 1px solid #ccc;
   width: 25%;
+  background: white;
   box-shadow: white;
   margin: 2rem;
 }
