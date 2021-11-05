@@ -32,7 +32,7 @@ export const ProductSection = () => {
     itemsProduct?.map((product) => {
       if (product.count === product.stock) {
         setItemsProduct((prev) => prev + 1);
-        console.log("se termino",product.stock);
+      }else{
       }
     });
   };
