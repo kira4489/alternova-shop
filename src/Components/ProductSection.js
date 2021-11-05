@@ -32,7 +32,8 @@ export const ProductSection = () => {
     itemsProduct?.map((product) => {
       if (product.count === product.stock) {
         setItemsProduct((prev) => prev + 1);
-      }else{
+        console.log("no hay mas plata",product.stock);
+        setItemsProduct(...itemsProduct);
       }
     });
   };
@@ -52,7 +53,7 @@ export const ProductSection = () => {
             onClick={() => handleAddItem(item)}
             className="btn btn-primary"
           >
-            <i class="fas fa-shopping-cart"></i>add to cart
+            <i className="fas fa-shopping-cart"></i>add to cart
           </button>
           </div>
         </div>
