@@ -1,30 +1,60 @@
-import React,{useState} from "react";
-import { productstree } from "../Assets/productstree.json"
-import "../Css/ProductSection.css"
+import React, { useState } from "react";
+import { productstree } from "../Assets/productstree.json";
+import "../Css/ProductSection.css";
 import { Products } from "./Products";
 
 export const ProductSection = () => {
-  const [itemsProduct, setItemsProduct] = useState(0);
-  
-  const handleAddItem = (e, idProduct) => {
-    setItemsProduct(prev => prev + 1)
-    if(e.preventDefault.value >= idProduct.stock) {
-      console.log('superaste la cantida de productos....')
-    }
-  }
+  const [itemsProduct, setItemsProduct] = useState([]);
 
+  const handleChangeItem = (stock) => {
+    /* setItemsProduct(prev => prev + 1) */
+    console.log(stock);
+    console.log(itemsProduct);
+    if (itemsProduct >= stock) {
+      console.log("superaste la cantida de productos....");
+    }
+  };
+
+  const handleAddItem = (product) => {
+    if (itemsProduct.length === 0) {
+      setItemsProduct([...itemsProduct, { ...product, count: 1 }]);
+    } else {
+      const newItems = [...itemsProduct];
+      const index = newItems.findIndex((item) => item.id === product.id);
+      if (index === -1) {
+        newItems.push({ ...product, count: 1 });
+      } else {
+        newItems[index].count++;
+      }
+      setItemsProduct(newItems);
+    }
+    /* setItemsProduct([...itemsProduct,{...product,count:1}]); */
+    itemsProduct?.map((product) => {
+      if (product.count === product.stock) {
+        setItemsProduct((prev) => prev + 1);
+        console.log("se termino",product.stock);
+      }
+    });
+  };
+  console.log(itemsProduct);
   return (
     <div className="card">
-     {productstree.map((item) => (
-      <div className="card-body" key={item.id}>
-        <h2 className="card-title">{item.name}</h2>
-        <img className="card-img" src={item.img} alt="img-product"/>
-        <input onChange={(e) => handleAddItem(e, item.stock)}/>+
-        <button className="btn btn-primary">
-        <i class="fas fa-shopping-cart"></i>add to cart
-        </button>
-      </div>
-        ))}
+      {productstree.map((item) => (
+        <div className="card-body" key={item.id}>
+          <h2 className="card-title">{item.name}</h2>
+          <img className="card-img" src={item.img} alt="img-product" />
+          {/*  <div>{itemsProduct}</div> */}
+          {/*  <button onClick={()=>handleAddItem(item.id)}>+</button> */}
+          <button>-</button>
+
+          <button
+            onClick={() => handleAddItem(item)}
+            className="btn btn-primary"
+          >
+            <i class="fas fa-shopping-cart"></i>add to cart
+          </button>
+        </div>
+      ))}
     </div>
   );
 };
