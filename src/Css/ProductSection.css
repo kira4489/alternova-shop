@@ -57,3 +57,11 @@
     margin: 20px auto;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .card-body {
+    width: 40%;
+    display: block;
+    margin: 20px auto;
+  }
+}
