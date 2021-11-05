@@ -1,15 +1,18 @@
-.products{
+.products {
   text-align: center;
 }
 
-.products-link1{
+.products-link1 {
   display: flex;
+  align-items: center;
   padding: 0 10px;
   margin: auto 20px;
+  justify-content: center;
 }
 
-.products-link1 li{
-    text-decoration: none;
-    list-style-type: none;
-    margin: auto 20px;
+.products-link1 li {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+  margin: auto 20px;
 }

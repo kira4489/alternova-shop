@@ -11,7 +11,6 @@ export const ProductSection = () => {
     console.log(stock);
     console.log(itemsProduct);
     if (itemsProduct >= stock) {
-      console.log("superaste la cantida de productos....");
     }
   };
 
@@ -38,6 +37,7 @@ export const ProductSection = () => {
     });
   };
   console.log(itemsProduct);
+  
   return (
     <div className="card">
       {productstree.map((item) => (
@@ -48,7 +48,7 @@ export const ProductSection = () => {
           {/*  <button onClick={()=>handleAddItem(item.id)}>+</button> */}
         <div className="button">
           <button>-</button>
-          <button>+</button>
+          <button onClick={()=>handleChangeItem}>+</button>
           <button
             onClick={() => handleAddItem(item)}
             className="btn btn-primary"
