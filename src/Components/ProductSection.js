@@ -45,14 +45,16 @@ export const ProductSection = () => {
           <img className="card-img" src={item.img} alt="img-product" />
           {/*  <div>{itemsProduct}</div> */}
           {/*  <button onClick={()=>handleAddItem(item.id)}>+</button> */}
+        <div className="button">
           <button>-</button>
-
+          <button>+</button>
           <button
             onClick={() => handleAddItem(item)}
             className="btn btn-primary"
           >
             <i class="fas fa-shopping-cart"></i>add to cart
           </button>
+          </div>
         </div>
       ))}
     </div>
