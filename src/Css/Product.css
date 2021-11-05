@@ -1,0 +1,15 @@
+.products{
+    border: 1px solid red;
+}
+
+.products-link1{
+  display: flex;
+  padding: 0 10px;
+  margin: 0 20px;
+}
+
+.products-link1 li{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0 20px;
+}
