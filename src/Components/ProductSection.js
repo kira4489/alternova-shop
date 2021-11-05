@@ -48,7 +48,7 @@ export const ProductSection = () => {
           {/*  <button onClick={()=>handleAddItem(item.id)}>+</button> */}
         <div className="button">
           <button>-</button>
-          <button onClick={()=>handleChangeItem}>+</button>
+          <button onClick={handleChangeItem}>+</button>
           <button
             onClick={() => handleAddItem(item)}
             className="btn btn-primary"
