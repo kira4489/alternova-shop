@@ -1,4 +1,11 @@
 .Navbar-title{
     text-align: center;
-    margin-top: 30px;
+    padding: 20px;
+    background-color: black;
+}
+
+.Navbar-title h1{
+    color: white;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
 }

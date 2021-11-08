@@ -8,7 +8,6 @@ export const Home = () => {
     <div className="container">
       <Navbar />
       <ProductSection/>
-      <Products />
     </div>
   );
 };
